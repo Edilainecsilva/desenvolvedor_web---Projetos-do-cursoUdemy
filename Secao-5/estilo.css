@@ -1,0 +1,22 @@
+/*************************
+ Barra horizontal */
+
+ ul {
+ 	list-style: none;
+ 	padding: 0;
+ 	margin: 0;
+ 	width: 720px;
+ 	background: #159cb0 url(imagens/fundo-horizontal.png) repeat-x;
+ 	float: left;
+ }
+
+ ul li {
+ 	float: left;
+ }
+
+ ul a{
+ 	padding: 0 2em;
+ 	text-decoration: none;
+ 	border: solid 2px red;
+
+ }

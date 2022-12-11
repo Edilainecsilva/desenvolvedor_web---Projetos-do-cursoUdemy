@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>JavaScript</title>
+
+	<!--Manipulando CLASSES elementos
+		<style>
+		    .estilo1 {
+		      background: #FF0000;
+		      color: #FFF;
+		    }
+
+		    .estilo2 {
+		      width: 400px;
+		      height: 50px;
+		      background-color: #FF0000;
+		      text-align: center;
+		      font-size: 25px;
+		      color: #FFF;
+		      padding: 25px;
+		    }
+		</style>
+	Fim do Manipulando CLASSES elementos-->
+
+		<script type="text/javascript">
+
+			/* Aula sobre Variaveis
+				//string
+				var texto = 'Curso de JavaScript'
+
+				//number
+				var numeroInteiro = -7
+				var numeroFloat = 0.5
+
+				//boolean
+				var teste = true
+
+				//alert(texto) //abrir um dialogo
+				//document.write(texto)
+				//console.log(numeroFloat)
+				Fim da aula sobre Variaveis*/
+
+			/* Aula sobre Concatenação
+
+			 	//var nome = 'Edilaine'
+				//var idade = 25
+
+				var nome = prompt('Digite seu nome:')
+				var idade = prompt('Digite sua idade:')
+				var idade2 = 26
+
+				console.log(idade)//string
+				console.log(idade2)//number int
+
+				//A idade dentro do prompt saiu como string, por isso é importante usar o exemplo com console.log, para ele entender q é um number
+				
+				document.write('<h1>Olá ' + nome + ', Você possui ' + idade + ' anos!</h1>')
+
+			Fim da Aula sobre Concatenação*/
+
+//------------------------------------------------------------------------
+
+			/* Aula Variaveis null e undefined
+
+				//null
+				var teste = null //indica a aucencia de um valor
+
+				//undefined
+				var teste2 = undefined //pode declarar ela ou emitir
+
+				console.log(teste)
+				//console.log(teste2)
+
+				teste = 'Valor modificado com sucesso'
+				
+				console.log(teste)
+
+				teste = 125
+
+				console.log(teste)
+
+			Fim da Aula Variaveis null e undefined */
+
+//------------------------------------------------------------------------
+
+			/* Desafio A-B-C
+
+				var a = 10
+				var b = 20
+				var c = null //variavel auxiliar utilizada na logica
+
+				document.write('A: ' + a + '<br />')
+				document.write('B: ' + b + '<br />')
+				document.write('C: ' + c + '<br /><br />')
+
+				//logica de inversao dos valores das variaveis A e B
+
+				c = a //utilizada a variável C para armazenar temporariamente o valor da variável A
+				a = b //sobrepõe o valor da variável A com o valor da variável B
+				b = c //sobrepóe o valor da variável B com o valor da variável C (C nesse momento contém o valor da variável A)
+				c = null  //opcional: remove o valor contido na variável C
+
+
+				document.write('A: ' + a + '<br />')
+				document.write('B: ' + b + '<br />')
+				document.write('C: ' + c + '<br />')
+
+			Fim do Desafio A B C*/
+
+//------------------------------------------------------------------------
+
+			/* Aula IF e Else
+
+				//Podemos usar todos os operadores para testar, Ex: if (2 == 7) da false pq nao sao iguais. Ex2: (2 === 2), (2 != 7), (2 !== 'abc'), (2 < 4)...  
+
+				if (2 === 2.5) {
+					document.write('Entrou dentro do bloco if (verdadeiro)')
+				} else {
+					document.write('Entrou dentro do bloco else (falso)')
+				}
+
+			Fim da Aula IF e Else */
+
+//------------------------------------------------------------------------
+
+			/* Media do aluno
+
+				var nota = prompt('Digite a nota do aluno:')
+				var media = 7
+
+				if (nota >= media) {
+					document.write('Aprovado!')
+				} else {
+					document.write('Reprovado!')
+				}
+
+			Media do aluno */
+
+//------------------------------------------------------------------------
+
+			/*Casting
+
+				//parseInt e parseFloat
+				//toString para transformar numero em string.Ex: document.write(variavel1.toString() + variavel2.toString())
+
+				var variavel1 = prompt('Digite um número:')
+				var variavel2 = prompt('Digite outro número:')
+
+				variavel1 = parseInt(variavel1)
+				variavel2 = parseInt(variavel2)
+
+				document.write(variavel1 + variavel2)
+
+			Fim do Casting */
+
+//------------------------------------------------------------------------
+
+			/* If e Else - operadores lógicos
+
+				//Operadores lógicos && = e (True se todos forem true.) || = ou (True se pelo menos um for true.) ! = negação (Inverter o resultado logico)
+
+				//true && true = true. Ex2: true && true && false = false. 
+				if(2 == 2 && 3 >= 1 && 'a' == 'b') {
+					document.write('Verdadeiro')
+				} else {
+				document.write('Verdadeiro')
+				}
+
+				//Outro Exemplo
+
+				var nota = prompt('Digite a nota do aluno:')
+				var faltas = prompt('Digite a quantidade de faltas:')
+
+				var media = 7
+				var faltas_maximas = 15
+
+				if (nota >= media && faltas <= faltas_maximas) {
+					document.write('Aprovado!')
+				} else {
+					document.write('Reprovado!')
+				}
+
+
+			Fim do If e Else - operadores lógicos*/
+
+//------------------------------------------------------------------------
+
+			/*Operador ternário
+				var nota = prompt('Digite a nota do aluno:')
+				var faltas = prompt('Digite a quantidade de faltas:')
+
+				var media = 7
+				var faltas_maximas = 15
+
+				
+				//if (nota >= media && faltas <= faltas_maximas) {
+					//document.write('Aprovado!')//logica
+				//} else {
+					//document.write('Reprovado!')//logica
+				//} 
+
+				var resultado = (nota >= media && faltas <= faltas_maximas) ? 'Aprovado!' : 'Reprovado!'
+				document.write(resultado)
+
+			Operador ternário */
+
+//------------------------------------------------------------------------
+
+		/* Faixa etária com base na idade
+
+			//1) Crie uma aplicação capaz de identificar a faixa etária com base na idade informada pelo usuário. Considere os seguintes critérios: Se a idade informada for maior ou igual a 0 e menor que 15, exibir a mensagem “Criança”. Se a idade informada for maior ou igual a 15 e menor que 30, exibir a mensagem “Jovem”. Se a idade informada for maior ou igual a 30 e menor que 60, exibir a mensagem “Adulto”. Se a idade informada for maior ou igual a 60, exibir a mensagem “Idoso”
+
+			var idade = prompt('Digite sua idade:')
+
+			idade = parseInt(idade)
+			
+			if (idade >= 0 && idade < 15) {
+				document.write('Criança')
+			} 
+			if (idade >= 15 && idade < 30) {
+				document.write('Jovem')
+			}
+			if (idade >= 30 && idade < 60) {
+				document.write('Adulto')
+			}
+			if (idade >= 60) {
+				document.write('Idoso')
+			}
+
+			 Exemplo 2
+
+				var idade = prompt('Digite a idade'); 
+ 
+				if(idade >= 0 && idade < 15){ 
+				 alert('Criança'); 
+				 
+				} else if(idade >= 15 && idade < 30){ 
+				 alert('Jovem'); 
+				 
+				} else if(idade >= 30 && idade < 60){ 
+				 alert('Adulto'); 
+				 
+				} else { 
+				 alert('Idoso'); 
+				}
+		Faixa etária com base na idade */
+
+//------------------------------------------------------------------------
+
+		/* Switch
+
+			var parametro = prompt('Digite um número:')
+
+			switch (parseInt(parametro)) {
+
+				case 1:
+					document.write('Parametro 1')
+				break
+
+				case 2:
+					document.write('Parametro 2')
+				break
+
+				default
+					document.write('Default')
+			}
+
+		Switch */
+
+//------------------------------------------------------------------------
+
+		/* Operadores Aritméticos
+
+			var num1 = prompt('Digite o valor de num1:')
+			var num2 = prompt('Digite o valor de num1:')
+
+			num1 = parseInt(num1)
+			num2 = parseInt(num2)
+
+			document.write('A soma entre ' + num1 + ' e ' + num2 + ' é: ' + (num1 + num2) + '<br />')
+			document.write('A subtração entre '+ num1 +' e ' + num2 +' é: ' + (num1 - num2) + '<br />')
+			document.write('A multiplicação entre '+ num1 +' e ' + num2 +' é: ' + (num1 * num2) + '<br />')
+			document.write('A divisão entre '+ num1 +' e ' + num2 +' é: ' + (num1 / num2) + '<br />')
+			document.write('A módulo entre '+ num1 +' e ' + num2 +' é: ' + (num1 % num2) + '<br />')
+			document.write('A incremento entre '+ num1 +' é: ' + (num1++) + '<br />')
+			document.write(num1 + '<br />')
+			document.write('A decremento entre '+ num1 +' é: ' + (num1--) + '<br />')
+			document.write(num1 + '<br />')
+
+
+			// Operações artméticas na atrubuição de valores
+
+			var teste = 'Olá '
+
+			//teste = teste + 5
+			//teste += 5
+			//teste -= 5
+			//teste *= 5
+			//teste /= 2
+			//teste %= 3
+			teste += 'Di!'
+			document.write(teste)
+
+			//Precedência - Ex: document.write(11 + 5 - 5 * 2 / 2). 1º multiplicacao e subtração. 2º soma e subtração. () - aplicar precedência.
+
+		Fim Operadores Aritméticos */
+
+//------------------------------------------------------------------------
+
+		/* Atividade de fixação:
+
+			Crie uma aplicação para efetuar o cálculo do índice de massa corporal.
+			Considere os seguintes critérios:
+			1) Ao executar o script a aplicação deve solicitar a entrada do nome da pessoa.
+			2) Na sequência a aplicação deve solicitar que seja informada a altura da pessoa em
+			centímetros.
+			3) Na sequência a aplicação deve solicitar que seja informado o peso da pessoa.
+			4) Após as estradas de dados, atente-se a conversão das informações para dados do tipo
+			float.
+			5) Converta a altura recebida em centímetros para metros. (basta dividir a altura por
+			100).
+			6) Internamente a aplicação deve executar o cálculo do índice de massa corporal através
+			da expressão: M = peso (quilos) ÷ altura²
+			7) Após identificar o índice de massa corporal o sistema deverá classificar em faixas
+			descritivas utilizando os critérios abaixo:
+			a) Se M estiver abaixo de 16 : Baixo peso muito grave
+			b) Se M estiver entre 16 e 16,99: Baixo peso grave
+			c) Se M estiver entre 17 e 18,49: Baixo peso
+			d) Se M estiver entre 18,50 e 24,99: Peso normal
+			e) Se M estiver entre 25 e 29,99: Sobrepeso
+			f) Se M estiver entre 30 e 34,99: Obesidade grau I
+			g) Se M estiver entre 35 e 39,99: Obesidade grau II
+			h) Se M for maior que 40: Obesidade grau III
+			8) Ao término o sistema deve fornecer a seguinte saída para o usuário:
+			“<Nome> possui índice de massa corporal igual a <m>, sendo classificado como:
+			<classificacao>.”
+			*As informações em vermelho são variáveis e devem ser substituídas pelos seus respectivos
+			valores calculadas dentro da aplicação. 
+
+			var nome = prompt('Olá, digite seu nome: ')
+			var altura = prompt('Digite sua altura em cm: ')
+			var peso = prompt('Digite seu peso: ')
+
+			altura = parseFloat(altura)
+			peso = parseFloat(peso)
+
+			altura = altura / 100
+
+			var imc = peso / (altura * altura)
+
+			var classificacao =
+
+			if (imc >= 16) {
+				classificacao('Baixo peso muito grave')
+			} else if (imc >= 16 && imc <= 16.99) {
+				classificacao('Baixo peso grave')
+			}else if (imc >= 17 && imc <= 18.49) {
+				classificacao('Baixo peso')
+			} else if (imc >= 18.50 && imc <= 24.99) {
+				classificacao('Peso normal')
+			} else if (imc >= 25 && imc <= 29.99) {
+				classificacao('Sobrepeso')
+			} else if (imc >= 30 && imc <= 34.99) {
+				classificacao('Obesidade grau I')
+			} else if (imc >= 35 && imc <= 39.99) {
+				classificacao('Obesidade grau II')
+			} else {
+				classificacao('Obesidade grau III')
+			}
+
+			document.write(nome + 'possui indice de massa corporal igual ' + imc + ' sendo classificado como: ' + classificacao) */
+
+//------------------------------------------------------------------------
+
+	/* Funções:
+
+		//void
+		//retorno
+
+		function calcularAreaTerreno (largura, comprimento) {
+			//lógica
+			var area = largura * comprimento
+
+			return area
+		}
+
+		var area = calcularAreaTerreno(15, 25)
+
+		document.write('O terreno possui ' + area + ' metros quadrados.' )
+
+		//parâmetros variáveis
+		function soma(a, b) {
+			return a + b
+		}
+
+		console.log(soma(7, 7))
+		console.log(soma(7, 7, 5, 6))
+		console.log(soma(7))
+		console.log(soma())
+
+		//desconsidera os parâmetros adicionais
+
+	Fim Funções */
+
+//------------------------------------------------------------------------
+
+	/* Escopo de variaveis
+
+		//3 escopos: global, função e bloco
+		
+		//escopo global
+		var serie = 'Friends'
+		
+		//escopo bloco
+		if (true) {
+			var serie2 = 'The vampire dairies'
+			document.write(serie)
+		}
+
+		document.write(serie2)
+		
+		//escopo função
+		function x() {
+			var serie3 = 'The Arrow'
+			document.write(serie)
+			document.write(serie2)
+		}
+
+		x()
+		document.write(serie3)
+		//serie 3 nao vai aparecer 
+
+	Fim de Escopo de variaveis */
+
+//------------------------------------------------------------------------
+
+	/* Funcões anonimas e a tecnica de wrapper
+
+		var exibirSaudacao = function(nome) {
+			document.write('Olá ' + nome + ', tudo bem?')
+			}
+
+		exibirSaudacao('Di')
+
+	Funcões anonimas e a tecnica de wrapper*/
+
+//------------------------------------------------------------------------
+
+	/* Funções callback 
+
+		function exibirArtigo(id, callbackSucess, callbackError){
+			//lógica: recuperar o id via requisição http
+			if (true) {
+				callbackSucess('Funções de callback em JS', 'Funções de callback são....')
+			} else {
+				callbackError('Erro ao recuperar os dados')
+			}
+		}
+
+		var callbackSucess = function(titulo, descricao){
+			document.write('<h1>' + titulo + '</h1>')
+			document.write('<hr /')
+			document.write('<p>' + descricao + '</p>')
+
+		}
+
+		var callbackError = function(erro) {
+			document.write('<p><b>Erro: </b>' + erro + '</p>')
+		}
+
+		exibirArtigo(1, callbackSucess, callbackError)
+
+	Fim Funções callback */
+
+//------------------------------------------------------------------------
+
+	/* Funções nativas para manipular strings
+		var nome = 'Edilaine Cristina da Silva'
+
+		//propriedade lengh
+		document.write(nome.length)
+		//propriedade charAt
+		document.write(nome.charAt(7))
+		//propriedade indexOf
+		document.write(nome.indexOf('i'))
+		//propriedade replace
+		document.write(nome.replace('Edilaine', 'Di'))
+		//propriedade substr
+		document.write(nome.substr(0, 8))
+		//propriedade toLowerCase
+		document.write(nome.toLowerCase())
+		//propriedade toUpperCase
+		document.write(nome.toUpperCase())
+		//propriedade trim
+		document.write('-' +nome.trim() + '-')
+
+	Fim da Funções nativas para manipular strings*/
+//------------------------------------------------------------------------
+
+	/* Funções nativas para tarefas matématicas
+		//ceil arredondamento para cima
+		var x = Math.ceil (10.380)
+		document.write(x)
+
+		//floor arredondamento para baixo
+		var x = Math.floor (10.380)
+		document.write(x)
+
+		//round arredonda a media 
+		var x = Math.round(10.380)
+		document.write(x)
+
+		//random traz números aleatórios entre 0 e 1
+		var x = Math.random()
+		document.write(x)
+	Fim da Funções nativas para tarefas matématicas*/
+
+//------------------------------------------------------------------------
+
+	/* Funções nativas para manipular datas
+
+		var data = new Date()
+
+		//document.write(data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear())
+
+
+		//adicionar ou remover dias
+		document.write(data.toString())
+	    data.setDate(data.getDate() + 720)
+	    document.write('<hr />')
+	    document.write(data.toString())
+	    document.write('<br /><br /><hr />')
+
+		//adicionar ou remover meses
+		document.write(data.toString())
+      	data.setMonth(data.getMonth() + 1)
+      	document.write('<hr />')
+      	document.write(data.toString())
+      	document.write('<br /><br /><hr />')
+
+		//adicionar ou remover anos
+		document.write(data.toString())
+      	data.setFullYear(data.getFullYear() + 1)
+      	document.write('<hr />')
+      	document.write(data.toString())
+
+
+		var data1 = new Date(2017, 0, 15)
+
+		var data1 = new Date(2017, 1, 27)
+
+
+		document.write(data1.toString())
+		document.write('<hr /')
+		document.write(data2.toString())
+
+		document.write('<br /><br /><hr /')
+
+		document.write(data1.getTime())
+		document.write('<hr /')
+		document.write(data2.getTime())
+
+		document.write('<br /><br /><hr /')
+		document.write(Math.abs(data1.getTime() - data2.getTime()))
+
+		document.write('1 dia tem: ' + (1*24*60*60*1000) + ' milessegundos')
+
+	Funções nativas para manipular datas */
+
+//------------------------------------------------------------------------
+
+	/*1) Crie uma aplicação para efetuar cálculo aritméticos de soma e subtração.
+		Considere os seguintes critérios:
+		1) Ao executar o script a aplicação deve solicitar a entrada de um número, seguido de
+		uma operação de soma ou subtração e posteriormente seguido de um segundo
+		número.
+		2) A operação deve ser inserida pelo usuário de forma textual, ou seja, quando o sistema
+		solicita a operação o usuário deve informar o texto ‘soma’ ou ‘subtração’ (sem as
+		aspas).
+		3) Na sequência o sistema deve enviar os parâmetros para uma função efetuar o devido
+		cálculo. Exemplo: calculo(num1, num2, operacao).
+		4) A função deve executar o cálculo com base na operação informada pelo usuário e na
+		sequência deve retornar o valor encontrado.
+		5) Ao término o sistema deve fornecer a seguinte saída para o usuário:
+		“O resultado é: <resultado>.”
+		*A informação em vermelho é uma variável e deve ser substituída pelo seu respectivo valor
+		calculada dentro da aplicação.	
+
+			var num1 = prompt('Digite um número: ')
+			var operacao = prompt('Digite uma operação: soma ou subtração?')
+			var num2 = prompt('Digite outro número: ')
+
+			function calculo(num1, num2, operacao) {
+
+				var num1 = parseFloat(num1)
+				var num2 = parseFloat(num2)
+
+				var resultado = 0
+
+				if (operacao == 'soma') {
+					 resultado = num1 + num2
+				}
+				if (operacao == 'subtração') {
+					 resultado = num1 - num2
+				}
+				return resultado
+			}
+
+
+			document.write('O resultado é: ' + calculo(num1, num2, operacao))
+
+	Fim da atividade*/
+
+//------------------------------------------------------------------------
+
+	/* Eventos
+
+		//Evento com mouse: onclick, ondblclick, onmouseup, onmouseover, onmouseout.
+		function acao1(){
+			alert('Evento disparado')
+		}
+
+		function acao2(){
+			alert('Mouse fora da area do elemento')
+		}
+
+		//Evento com teclado: onkeydown, onkeypress, onkeyup
+		//Evento com janela: onrezide, onscroll
+		//Evento com formulario: onfocus, onblur, onchange
+
+	Fim de Eventos */
+
+//------------------------------------------------------------------------
+
+	/*** DOM
+
+		//document (API DOM): getElementById(), getElementsByTagName(), getElementsByClassName(), getElementsByName(). Existem outros, esses são os mais usados.
+
+		//Precisa colocar o script abaixo no body ---> console.log(document.getElementById('nome_usuario'))
+
+		/*Manipulando valores de inputs(text): document.getElementById('entrada').value
+
+		     function distribuiCaracter(){
+		       //selecionar o valor digitado
+		       var caracter = document.getElementById('entrada').value
+
+		       //limpar o campo de digitação
+		       document.getElementById('entrada').value=''
+
+		       //limpar espaços em branco nas extremidades da string
+		       caracter.trim()
+
+		       switch(caracter) {
+		         case '0':
+		         case '1':
+		         case '2':
+		         case '3':
+		         case '4':
+		         case '5':
+		         case '6':
+		         case '7':
+		         case '8':
+		         case '9':
+		           //adicionar o caracter no campo referente a números
+		           document.getElementById('apenas_numeros').value = caracter
+		           break;
+		           default:
+		            //adicionar o caracter no campo referente a letras
+		            document.getElementById('apenas_letras').value = caracter 
+		       }
+		     }
+
+		Fim do Manipulando valores de inputs(text)*/
+
+		 /*Manipulando estilos de elementos:
+
+		     function modificaEstilo(corDeFundo, l, a){
+		      document.getElementById('quadrado').style.backgroundColor = corDeFundo     
+		      document.getElementById('quadrado').style.width = l     
+		      document.getElementById('quadrado').style.height = a     
+		    }
+
+		Fim do Manipulando estilos de elementos*/
+
+		/* Manipulando CLASSES elementos
+
+			function modificaClasse() {
+      		document.getElementById('mensagem').className = 'estilo2'
+    		}
+
+    	Fim do Manipulando CLASSES elementos/
+
+    FIM DOM ***/
+
+//------------------------------------------------------------------------
+
+    /* Atividade de fixação:
+    //1) Crie um campo <input type="text"> e aplique os seguintes controles com base nos eventos abaixo: • No evento de foco modifique o background do input para amarelo. • Quando o campo perder o foco, recupere o seu respectivo valor e: o Caso o conteúdo contido no campo tenha menos de 3 caracteres o mesmo deve ter seu background alterado para vermelho. o Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background deve ser alterado para verde
+   
+
+		    function acionaCampo() {
+			 document.getElementById('campo').style.background = "yellow"
+			 }
+			 function validaCampo() {
+			 var valorCampo = document.getElementById('campo').value
+			 if(valorCampo.length < 3) {
+			 document.getElementById('campo').style.background = "red"
+			 } else {
+			 document.getElementById('campo').style.background = "green"
+			 }
+			 }
+
+	Fim da Atividade de fixação*/
+
+//------------------------------------------------------------------------
+
+	/* App Calculadora*/
+
+//------------------------------------------------------------------------
+
+	/* Array 
+
+
+		//São listas, arrays são uma forma de armazenar listas, exemplos: lista de supermecardo, lista de pessoas, de cidades e outros.
+
+		//existem 2 jeitos de declarar Array. 1ºArray() e 2º[]
+
+		/*var lista_frutas = Array()
+		//var lista_frutas = []
+		//var lista_frutas = Array('Banana', 'Abacaxi', 'Morango', 'Uva')
+
+			lista_frutas[1] = 'Banana'
+			lista_frutas[2] = 'Abacaxi'
+			lista_frutas[3] = 'Morango'
+			lista_frutas[4] = 'Uva'
+
+			console.log(lista_frutas)
+
+
+		//Array multidimensional
+		var lista_coisas = Array()
+		lista_coisas['frutas'] = Array('Banana', 'Maça', 'Pera')
+
+		lista_coisas['pessoas'] = []
+
+		lista_coisas['pessoas']['a'] = 'Di'
+		lista_coisas['pessoas']['b'] = 'Mi'
+		lista_coisas['pessoas']['c'] = 'Dé'
+
+		console.log(lista_coisas)
+
+
+		//Array - inclusão e remoção
+		var lista_coisas = Array()
+
+		lista_coisas['frutas'] = Array('Banana', 'Maça', 'Pera')
+
+		lista_coisas['frutas'].unshift('Uva')//inclusão inicial 
+		lista_coisas['frutas'].push('Abacaxi')//inclusão final
+		lista_coisas['frutas'].shift()//exclusão inicial
+		lista_coisas['frutas'].pop()//exlusão final
+
+		console.log(lista_coisas)
+
+		//Array - método pesquisa
+
+		var lista_frutas = Array('Banana', 'Maçã', 'Morango', 'Uva')
+
+		var auxiliar = lista_frutas.indexOf('Banana')
+
+		if(auxiliar === -1){
+			console.log('Elemento não existe')
+		}else {
+			console.log('Elemento existe e está na posição' + auxiliar)
+		}
+
+
+		//Array - ordenação
+
+		var lista_frutas = Array()
+
+	    lista_frutas[0] = 'Maçã'
+	    lista_frutas[1] = 'Uva'
+	    lista_frutas[2] = 'Banana'
+	    lista_frutas[3] = 'Morango'
+
+	    console.log(lista_frutas.sort())
+
+	    var lista_numeros = Array()
+
+	    //lembre-se, operador númerico em string funciona na ordenação.
+	    lista_numeros[0] = 12
+	    lista_numeros[1] = 40
+	    lista_numeros[2] = 3
+	    lista_numeros[3] = 7
+	    lista_numeros[4] = 19
+	    lista_numeros[5] = 1
+
+	    console.log(lista_numeros.sort(ordenaNumeros))
+
+	    function ordenaNumeros (a, b) {
+	      return a - b
+	    }
+
+
+	Fim do Array */
+
+//------------------------------------------------------------------------
+	/*Atividade de fixação*/
+
+//------------------------------------------------------------------------
+	/*Estrutura de repetição*/
+/*
+	var lista_frutas = Array ()
+
+	lista_frutas[0] = 'Banana'
+	lista_frutas[1] = 'Maça'
+	lista_frutas[2] = 'Morango'
+	lista_frutas[3] = 'Uva'
+
+	var y = 0
+
+	white(y < lista_frutas.length){
+		document.write(lista_frutas[y] + '<br />')
+		y++
+	}
+
+	/* Pratica Tabuada */
+
+		for(var y = 1; y <= 10; y++) {
+
+			for(var x = 1; x <= 10; x++){
+				document.write(y + ' x ' + x + '=' + (y * x) + '<br />')
+			}
+
+			document.write('<hr />')
+		}
+
+
+			</script>
+		
+
+		</head>
+			<body>
+				<!-- Primeira aula Java Script
+				<input type="text" 
+				placeholder="Teste"
+				id="nome"
+				disabled="disabled"
+				>
+				<script src="javascript.js"></script>
+				Fim da primeira aula-->
+
+				<!-- Eventos
+				<div onclick="acao1()" onmouseout="acao2()" style="background: #ccc; height: 150px; width: 150px;"></div>
+				
+				//Evento formulário
+				<input onfocus="console.log('recebeu o foco')" onblur="console.log('perdeu o foco')" type="text">
+
+			    <select onchange="console.log('Estado foi modificado')">
+			      <option>-- Selecione --</option>
+			      <option value="1">Primeira opção</option>
+			      <option value="2">Segunda opção</option>
+			    </select>
+			    Fim Eventos-->
+
+			    <!-- DOM
+					//Selecionando elementos da página
+			    <input type="text" placeholder="Digite seu nome:" id="nome_usuario" class="campo_texto" name="nome">
+
+			    <script type="text/javascript">
+			    	//console.log(document.getElementById('nome_usuario'))
+			    	//console.log(document.getElementsByTagname('input'))
+			    	console.log(document.getElementByClassName('campo_texto'))
+			    	//console.log(document.getElementByName('nome'))
+			    </script>
+
+
+			    //Manipulando VALORES de inputs(text)
+
+					<input type="text"
+				    placeholder="Digite um caracter aqui"
+				    onkeyup="distribuiCaracter()"
+				    id="entrada">
+
+				    <hr />
+				    <span>Letras:</span>
+				    <input type="text" disabled="disabled" id="apenas_letras">
+				    
+				    <span>Números:</span>
+				    <input type="text" disabled="disabled" id="apenas_numeros">
+
+
+				//Manipulando ESTILOS de elementos
+
+				    <h3>Manipulando estilo</h3>
+
+				   <button type="button" onclick="modificaEstilo('#FF0000', '200px')">Vermelho</button>
+				   <button type="button" onclick="modificaEstilo('#00FF00', '150px', '20px')">Verde</button>
+				   <button type="button" onclick="modificaEstilo('#0000FF', '150px', '200px')">Azul</button>
+				   
+				   <div id="quadrado" style="border: solid 1px #000; width: 100px; height: 100px;"></div>
+
+				//Manipulando CLASSES elementos
+
+				    <div id="mensagem" class="estilo1">Modificando a classe do elemento</div>
+				  <hr />
+				  <button type="button" onclick="modificaClasse()">Aplicar classe</button>
+
+
+			    <-- Fim do DOM -->
+
+			    <!-- Atividade de fixação
+
+			    	<input id="campo" type="text" onfocus="acionaCampo()" onblur="validaCampo()" />
+			    -->
+
+
+		</body>
+</html>
